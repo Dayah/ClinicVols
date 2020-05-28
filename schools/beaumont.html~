@@ -1,0 +1,83 @@
+<html>
+<head>
+<title>ClincVOLS.org</title>
+<BASE href="../">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="styles.css" type="text/css" media="screen">
+<script language="JavaScript" src="menu_options.js"></script>
+<script language="JavaScript" src="mm_menu.js"></script>
+</head>
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<script language="JavaScript1.2">mmLoadMenus();</script>
+
+<table id="Table_01" border="0" cellspacing="0" cellpadding="0">
+  	<tr>
+  		<td><a href="index.html"><img src="images/logo.png" alt="Logo" name="Logo" width="315" height="102" border="0" id="image2"></a></td>
+  		<td width="40"></td>
+  		<td><img src="images/about.png" alt="About" border="0" id="About" onMouseOver="MM_showMenu(window.mm_menu_about,0,95,null,'About')" onMouseOut="MM_startTimeout();"></td>
+  		<td><img src="images/schools.png" alt="Schools" border="0" id="Schools" onMouseOver="MM_showMenu(window.mm_menu_schools,0,95,null,'Schools')" onMouseOut="MM_startTimeout();"></td>
+  		<td><a href="membership.html"><img src="images/apply.png" alt="Apply" border="0"></a></td>
+  		<td><a href="officers.html"><img src="images/contact.png" alt="Contact" border="0"></a></td>
+  		
+  	</tr>
+  	<tr>
+  		<td colspan="100%" align="center"><img src="images/mission_statement.png" alt="Mission Statement" border="0"></td>
+  	</tr>
+  	
+  	<tr>
+  		<td colspan="100%" align="center" bgcolor="#ffffff" style="-moz-border-radius: 15px; border-radius: 15px;">
+  		
+  		<br>
+    		<center><span class="style62">Beaumont Elementary</span></center>
+    		<br>
+  			
+  			<div align="center">
+        <table width="627" border="0" cellspacing="5">
+          <tr>
+            <th valign="top"><span class="style88">Address</span></th>
+            <th valign="top"><span class="style88">School Hours</span></th>
+            <td rowspan="2" align="center"><img src="images/beaumont.jpg" width="133" height="199"></td>
+        	</tr>
+        	<tr>
+        		<td valign="top" align="center">
+                <p class="style94">1211 Beaumont Ave</p>
+              	<p class="style94">Knoxville, TN 37921</p>
+              	<p class="style94">(865) 594-1272</p>
+              	<p class="style94">&nbsp;</p>
+              	<p class="style57"><a href="http://maps.google.com/maps?ie=UTF-8&dq=beaumont+elementary+knoxville+tn&daddr=1211+Beaumont+Ave,+Knoxville,+TN+37921&geocode=9857525135656525673,35.975857,-83.940880&ll=35.975857,-83.940880&iwstate1=dir:to&iwloc=A&f=d" class="style95">Google Directions</a></p>
+              	</td>
+            
+            <td valign="top" align="center">
+                <p><span class="style57">7:30 a.m. - 2:30 p.m.</span></p>
+              	<p class="style57"><a href="http://beaumontes.knoxschools.org/?sessionid">School Website</a></p>
+            </th>
+
+          </tr>
+          <tr>
+            <th valign="top" colspan="2">
+            	<p align="center" class="style88">Clinic Officers</p>
+            </th>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td valign="top" height="123">
+                <p align="right" class="style94"><a href="officers/kknolton.html">Kelly Knolton</a></p>
+              	<p align="right" class="style94"><a href="officers/kwarren.html">Kaitlyn Warren</a></p></td>
+            <td valign="top">
+                <p align="left" class="style94"><a href="mailto:kknolton@utk.edu">kknolton@utk.edu</a></p>
+             	<p align="left" class="style94"><a href="mailto:kwarre11@utk.edu">kwarre11@utk.edu</a></p></td>
+            <td valign="top">
+                <p align="center" class="style57"><span class="style85"><a href="school_schedule.php?school=Beaumont">Beaumont Schedule</a></span></p>
+              	<p align="center"><span class="style57"><a href="request_time_slot.php?school=Beaumont">Request Time Slot</a></span></p></td>
+          </tr>
+        </table>
+      </div>
+    	</td>
+  	</tr>
+
+  	
+
+</table>
+
+</body>
+</html>

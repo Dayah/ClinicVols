@@ -1,0 +1,12 @@
+Beaumont Elementary|1211 Beaumont Ave|Knoxville, TN 37921|(865) 594-1272|7:30 a.m. - 2:30 p.m|http://beaumontes.knoxschools.org/|beaumont.jpg
+Bonny Kate Elementary|7608 Martin Mill Pike|Knoxville, TN 37920|(865) 579-2108|7:30 a.m. - 2:30 p.m.|http://bonnykatees.knoxschools.org/|bonnykate.jpg
+Dogwood Elementary|705 Tipton Ave|Knoxville, TN 37920|(865) 579-5677|7:30 a.m. - 2:30 p.m.|http://dogwoodes.knoxschools.org/|dogwood.jpg
+East Knox Elementary|9315 Rutledge Pike|Mascot, TN 37921|(865) 933-3493|7:30 a.m. - 2:30 p.m.|http://eastknoxes.knoxschools.org/|
+Green Magnet Academy|800 Townview Dr|Knoxville, TN 37915|(865) 594-1324|7:30 a.m. - 2:30 p.m.|http://greenes.knoxschools.org/|green.jpg
+Inskip Elementary|4701 High School Rd.|Knoxville, TN 37912|(865) 689-1450|7:30 a.m. - 2:30 p.m.|http://inskipes.knoxschools.org/|inskip.jpg
+Adrian Burnett Elementary|4521 Brown Gap Rd|Knoxville, TN 37918||7:30am-2:30pm|http://www.knoxschools.org/burnettes|
+Mount Olive Elementary|2507 Maryville Pike|Knoxville, TN 37920|(865) 594-1277|7:30 a.m. - 2:30 p.m.|http://mountolivees.knoxschools.org/|
+Pond Gap Elementary|1401 Hollywood Rd|Knoxville, TN 37909|(865) 909-9040|3:00 p.m. - 7:00 p.m.|http://pondgapes.knoxschools.org/|pondgap.jpg
+South Knox Elementary|801 Sevier Ave.|Knoxville, TN 37920|(865) 579-2100|7:30 a.m. - 2:30 p.m.|http://southknoxes.knoxschools.org/|southknox.jpg
+Spring Hill Elementary|4711 Mildred Dr.|Knoxville, TN 37914|(865) 594-1365|7:30 a.m. - 2:30 p.m.|http://springhilles.knoxschools.org/|springhill.jpg
+Pleasant Ridge||||||

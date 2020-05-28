@@ -1,0 +1,13 @@
+! xterm defaults
+XTerm*scrollBar:        on
+XTerm*saveLines:        1000
+XTerm*sunFunctionKeys:  on
+XTerm*ttyModes:         erase ^H kill ^U intr ^C susp ^Z
+XTerm*loginShell:       true
+
+! Manual browser defaults
+xman.manualBrowser.title:	manual page
+*xman*manualBrowser.geometry: 500x770-50-0
+*xman.bothShown: true
+*xman.topBox: false
+*xman*iconic: true

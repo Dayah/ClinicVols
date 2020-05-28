@@ -1,0 +1,26 @@
+body { 
+	font-family: Helvetica, Arial, sans-serif;
+	background-image: url(images/background.png); 
+	background-repeat: repeat; 
+	padding: 1.0in;
+	padding-bottom: 0.25in; 
+	padding-top: 0.5in 
+}
+
+a { color:#000000; text-decoration:underline; }
+
+.style56, .style58, .style87 {font-size: 14px}
+.style57 {font-weight: bold;}
+.style59 {font-weight: bold; font-size: 14px;}
+.style62 {font-weight: bold; font-size: 30px; color: #ff0000;}
+.style66 {font-weight: bold; font-size: 18px; color: #ff0000;}
+.style67 {font-size: 18px}
+.style68 {font-weight: bold; color: #ffffff;}
+.style69 {font-weight: bold; font-size: 14px; color: #ffffff;}
+
+.style74 {font-size: 24px; color: #ff9900;}
+.style80 {font-weight: bold; font-size: 24px; color: #ff9900;}
+.style88 {font-weight: bold; font-size: 16px; color: #ff0000;}
+.style92 {font-weight: bold; }
+.style94 {font-weight: bold; font-size: 14px;}
+.style95 {font-size: 16px;}

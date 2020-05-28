@@ -1,0 +1,9 @@
+###############################################################################
+#                                                                             #
+#       This file is used to allow you to rlogin or rsh to the listed         #
+#       machines without using your password.  Be very careful of the         #
+#       entries you put in this file.                                         #
+#                                                                             #
+#       For more information, see "man .rhosts"                               #
+#                                                                             #
+###############################################################################

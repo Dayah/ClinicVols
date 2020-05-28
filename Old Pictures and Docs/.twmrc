@@ -1,0 +1,347 @@
+#************************************************************************
+#									*
+#  				.twmrc                                  *
+#                                                                       *
+# This file is used to define resources for the TAB Window Manager (twm)*
+# see "man twm" for a complete reference of twm customisation.          *
+#                                                                       *
+# (customized for use by the University of Tennessee UNIX Systems Group)*
+#									*
+#************************************************************************
+
+AutoRelativeResize
+DecorateTransients
+IconifyByUnMapping
+NoCaseSensitive
+NoGrabServer
+RestartPreviousState
+ShowIconManager
+SortIconManager
+
+BorderWidth		1
+DefaultFunction		f.beep
+IconBorderWidth		1
+IconDirectory		"/usr/x11/include/X11/bitmaps"
+IconFont 		"-adobe-helvetica-bold-r-normal--*-100-*-*-*-*-*-*"
+IconManagerGeometry	"120x10-2+2"
+MenuFont 		"-adobe-helvetica-bold-r-normal--*-120-*-*-*-*-*-*"
+ResizeFont 		"-adobe-new century schoolbook-medium-r-*-*-*-180-*-*-*-*-*-*"
+TitleFont 		"-adobe-helvetica-bold-r-normal--*-120-*-*-*-*-*-*"
+XorValue		1
+
+#
+# Define some useful functions for motion-based actions.
+#
+
+MoveDelta 1
+Function "move-or-lower" { f.move f.deltastop f.lower }
+Function "move-or-raise" { f.move f.deltastop f.raise }
+Function "move-or-iconify" { f.move f.deltastop f.iconify }
+
+LeftTitleButton  "menu16" = f.menu "SubMenu"	# Add a menu to each window
+LeftTitleButton  "pin_in" = f.delete		# Useful to close OpenWindows clients
+
+# The following entries define the colors to be used for the given class.
+# The entries on the left side associate a resource name with the color
+# on the right.  Resource names are defined using the "-name" option.
+# For example, when the following command is issued:
+#
+#       xterm -name LOCAL -n `hostname` &
+#
+# will open a window whose title background is "MistyRose1", the entry
+# corresponding to "LOCAL" (see below)
+#
+# How can this be useful?  Well, it would be nice if a certain group
+# of windows that logically belong together share the same color
+# without the user having to specifically define the color for each and 
+# every one of them.
+#
+# For example, an xterm window open to any of the LOCAL host will
+# have a "MistyRose1" color in the IconManager when invoked with "-name LOCAL".
+# Different colors are defined for each group of hosts.
+
+Color
+{
+    BorderColor "black"
+
+    MenuBackground	"maroon"
+    MenuForeground	"white"
+
+    MenuTitleBackground	"gray90"
+    MenuTitleForeground	"maroon"
+
+    IconBackground	"maroon"
+    IconForeground	"white"
+    IconBorderColor	"gray85"
+
+    TitleForeground	"black"			# Default..
+        {
+	"XCLIENT"	"black"			# X clients
+	"Console"	"white"			# Console window, if applicable
+	"LOCAL"		"black"			# Local host
+	"SERVER"	"white"			# UTCC UNIX Servers
+        "VAX"		"white"			# UTCC VAX Cluster
+        "SUNWS"		"white"			# Sun Workstations
+        "DECWS"		"white"			# DEC Workstations
+        "OTHER"		"black"			# IBM Hosts, Library, DCA, etc.
+        }
+
+    TitleBackground	"ivory2"		# Default..
+        {
+        "XCLIENT"	"yellow"
+        "Console"	"red"
+	"LOCAL"		"ivory2"
+        "SERVER"	"skyblue4"
+        "VAX"		"maroon"
+        "SUNWS"		"gray75"
+        "DECWS"		"lightgoldenrod"
+        "OTHER"		"yellow"
+        }
+
+    IconManagerForeground   "black"
+        {
+	"XCLIENT"	"black"
+        "Console"	"white"
+        "Calendar"	"white"
+	"LOCAL"		"black"
+        "SERVER"	"white"
+        "VAX"		"white"
+        "SUNWS"		"white"
+        "DECWS"		"white"
+        "OTHER"		"black"
+        }
+
+    IconManagerBackground	"ivory2"
+        {
+	"XCLIENT"	"yellow"
+        "Console"	"red"
+	"LOCAL"		"MistyRose1"
+        "SERVER"	"skyblue4"
+        "VAX"		"maroon"
+        "SUNWS"		"gray75"
+        "DECWS"		"lightgoldenrod"
+        "OTHER"		"yellow"
+        }
+
+}	# END of Color customizations..
+
+Monochrome
+{
+    MenuTitleForeground "white"
+    MenuTitleBackground "black"
+}
+
+IconManagerDontShow
+  { "oclock" "xclock" "xload" "xbiff" }
+
+NoTitle
+  { "oclock" "xclock" "xload" "xbiff" "xlogo" "xlogout" }
+
+NoHighlight
+  { "oclock" "xclock" "xlogo" }
+
+# Key Bindings..
+#
+# When pointer is on CONTEXT, and KEY is held down, FUNCTION is performed
+# KEY is one of: m=meta, c=ctrl, s=shift or NONE (shown as blank)
+
+#Button = KEYS : CONTEXT : FUNCTION
+#------------------------------------------
+
+Button1 =      : root    : f.menu "button1"
+Button2 =      : root    : f.menu "button2"
+Button3 =      : root    : f.menu "button3"
+
+Button1 =  m   : window  : f.menu "button1"
+Button2 =  m   : window  : f.raiselower
+Button3 =  m   : window  : f.menu "button3"
+
+Button1 =      : title   : f.move
+Button2 =      : title   : f.raiselower
+Button1 =  m   : title   : f.menu "button1"
+Button2 =  m   : title   : f.menu "button2"
+Button3 =  m   : title   : f.menu "button3"
+
+Button1 =      : icon    : f.function "deiconify-raise"
+Button2 =      : icon    : f.move
+
+
+Function "deiconify-raise"
+{
+	f.deiconify
+	f.raise
+}
+
+# Menu Definitions..
+
+menu "SubMenu"
+{
+ "Refresh"		f.winrefresh
+ "Move"			f.move
+ "Resize"		f.resize
+ "Minimize"		f.iconify
+ "Maximize"		f.fullzoom
+ "Bring to Front"	f.raiselower
+ "Send to Back"		f.lower
+ "Toggle AutoRaise"	f.autoraise
+ ""			f.title
+ "Identify"		f.identify
+ "Zoom"			f.menu "ZoomWindow"
+ "Close"		f.menu "CloseWindow"
+}
+
+menu "ZoomWindow"
+{
+ "Left   Half"         f.vlzoom
+ "Bottom Half"         f.hbzoom
+ "Top    Half"         f.htzoom
+ "Right  Half"         f.vrzoom
+ "Full (Un)Zoom"       f.fullzoom
+}
+
+menu "CloseWindow"
+{
+ "Normal CLOSE"		f.delete
+ "Forced CLOSE"		f.destroy
+}
+
+menu "button1"
+{
+ "Global Operations"	f.title
+ "Redraw Screen"	f.refresh
+ "Show Icon Manager"    f.showiconmgr
+ "Hide Icon Manager"    f.hideiconmgr
+ "Restart Window Manager" f.twmrc
+ "Window Manager Version" f.version
+ "Window-specific"	f.title
+ "(De)Iconify"		f.iconify
+ "Move Window"		f.move
+ "Resize Window"	f.resize
+ "Raise Window"		f.raise
+ "Lower Window"		f.lower
+ "Toggle Autoraise"     f.autoraise
+ "Identify"             f.identify
+ "Handle with care.."	f.title
+ "DESTROY Window"	f.destroy
+ "Quit.." 		f.menu "Quit Manager"
+}
+
+menu "Quit Manager"
+{
+  " Really quit? " f.title
+  "     Yes      " f.quit
+  "     Cancel   " f.nop
+}
+
+menu "button3"
+{
+ "Preferences"		f.title
+ "Autorepeat On"	!"xset r on &"
+ "Autorepeat Off"	!"xset r off &"
+ "Fast Mouse Tracking"	!"xset m 4 2 &"
+ "Slow Mouse Tracking"	!"xset m &"
+ "Fast Screen Saver"	!"xset s 50 50 &"
+ "Slow Screen Saver"	!"xset s 500 500 &"
+}
+
+menu "button2"
+{
+ "Open Window To:"	f.title
+ "Local Host"		f.menu "Local Host"
+ "utkux1"		f.menu "utkux1"
+ "utkux4"		f.menu "utkux4"
+ "gis"			f.menu "gis"
+ "dogwood"		f.menu "dogwood"
+ "telnet session"	f.menu "telnet session"
+ "IBM Systems"		f.menu "IBM Systems"
+ "Other"		f.menu "Other"
+}
+
+menu "Local Host"
+{
+ "Font Size"      	f.title
+ "Default"   !"xterm -xrm *iconName:Local  &"
+ "Small"     !"xterm -xrm *iconName:Local_small -fn 6x10 -fb 7x13 &"
+ "Large"     !"xterm -xrm *iconName:Local_LARGE -fn 9x15 -fb 9x15B  &"
+}
+
+menu "utkux1"
+{
+ "Font Size"	f.title
+ "Default"   !"xterm -title utkux1 -e rlogin utkux1.utk.edu &"
+ "Small"     !"xterm -title utkux1_small -fn 6x10 -fb 7x13 -e rlogin utkux1.utk.edu &"
+ "Large"     !"xterm -title utkux1_LARGE -fn 9x15 -fb 9x15B -e rlogin utkux1.utk.edu &"
+}
+
+menu "utkux4"
+{
+ "Font Size"	f.title
+ "Default"   !"xterm -title utkux4 -e rlogin utkux4.cas.utk.edu &"
+ "Small"     !"xterm -title utkux4_small -fn 6x10 -fb 7x13 -e rlogin utkux4.cas.utk.edu &"
+ "Large"     !"xterm -title utkux4_LARGE -fn 9x15 -fb 9x15B -e rlogin utkux4.cas.utk.edu &"
+}
+
+menu "gis"
+{
+ "Gis machines"	f.title
+ "gis1"   !"xterm -title gis1 -e rlogin gis1.cas.utk.edu &"
+ "gis2"   !"xterm -title gis2 -e rlogin gis2.cas.utk.edu &"
+ "gis3"   !"xterm -title gis3 -e rlogin gis3.cas.utk.edu &"
+ "gis4"   !"xterm -title gis4 -e rlogin gis4.cas.utk.edu &"
+}
+
+menu "dogwood"
+{
+ "Dogwood machines"	f.title
+ "dogwood1"   !"xterm -title dogwood1 -e rlogin dogwood1.cas.utk.edu &"
+ "dogwood2"   !"xterm -title dogwood2 -e rlogin dogwood2.cas.utk.edu &"
+ "dogwood3"   !"xterm -title dogwood3 -e rlogin dogwood3.cas.utk.edu &"
+}
+
+menu "telnet session"
+{
+ "Telnet Sessions"	f.title
+ "utkux1"   !"xterm -title utkux1 -e rlogin utkux1.utk.edu &"
+ "utkux4"   !"xterm -title utkux4 -e rlogin utkux4.cas.utk.edu &"
+ "gis1"   !"xterm -title gis1 -e rlogin gis1.cas.utk.edu &"
+ "gis2"   !"xterm -title gis2 -e rlogin gis2.cas.utk.edu &"
+ "gis3"   !"xterm -title gis3 -e rlogin gis3.cas.utk.edu &"
+ "gis4"   !"xterm -title gis4 -e rlogin gis4.cas.utk.edu &"
+ "dogwood1"   !"xterm -title dogwood1 -e rlogin dogwood1.cas.utk.edu &"
+ "dogwood2"   !"xterm -title dogwood2 -e rlogin dogwood2.cas.utk.edu &"
+ "dogwood3"   !"xterm -title dogwood3 -e rlogin dogwood3.cas.utk.edu &"
+}
+
+menu "IBM Systems"
+{
+ "IBM Systems"	f.title
+ "VM/CMS"	f.menu "VM/CMS"
+ "MVS/TSO"	f.menu "MVS/TSO"
+}
+
+menu "VM/CMS"
+{
+ "Select TN Model"	f.title
+ "Model 2 = 80x24"	!"xtn3270 -m 2 utkvm1 &"
+ "Model 3 = 80x32"	!"xtn3270 -m 3 utkvm1 &"
+ "Model 4 = 80x43"	!"xtn3270 -m 4 utkvm1 &"
+ "Model 5 = 132x27"	!"xtn3270 -m 5 utkvm1 &"
+}
+
+menu "MVS/TSO"
+{
+ "Select TN Model"	f.title
+ "Model 2 = 80x24"	!"xtn3270 -m 2 utkmvs1 &"
+ "Model 3 = 80x32"	!"xtn3270 -m 3 utkmvs1 &"
+ "Model 4 = 80x43"	!"xtn3270 -m 4 utkmvs1 &"
+ "Model 5 = 132x27"	!"xtn3270 -m 5 utkmvs1 &"
+}
+
+menu "Other"
+{
+ "Other Hosts"	f.title
+ "UTK Library"	!"xterm -name OTHER -T 'UTK Library' -sb -n 'Library' -e telnet library.lib.utk.edu &"
+ "DCA (UTCC)"	!"xterm -name OTHER -T DCA -sb -n DCA -e telnet DCA.utk.edu &" 
+ "UTCC Hot Line"!"xterm -name OTHER -n 'UTCC Hot Line' -T 'UTCC Hot Line' -geom +350+350 +sb -bg LemonChiffon -fg black -fn 7x13 -e telnet hotline.utk.edu &"
+}
+
